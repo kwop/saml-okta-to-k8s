@@ -1,0 +1,5 @@
+projectName: firewalled-test
+ingressDomain: xip.io
+containerFront: nginx
+samlEndpoint: okta-test
+

@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: {{ .Release.Name }}-pod
+  labels:
+    app: {{ .Release.Name }}
+spec:
+  containers:
+    - name: pysaml2
+      image: {{ .Values.containerPath }}
+      imagePullPolicy: Always
+      ports:
+        - containerPort: 5000
+      env:
+        - name: URL_SAML_METADATA
+          valueFrom:
+            configMapKeyRef:
+              name: {{ .Release.Name }}-config
+              key: url_saml_metadata

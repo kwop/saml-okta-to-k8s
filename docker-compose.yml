@@ -1,0 +1,14 @@
+version: '3.7'
+services:
+  okta-pysaml2-front:
+    container_name: okta-pysaml2-front
+    build:
+      context: okta-pysaml2-front/
+      dockerfile: Dockerfile
+    ports:
+      - "80:5000"
+    environment:
+      URL_SAML_METADATA: ${URL_SAML_METADATA}
+      COOKIE_DOMAIN: ${COOKIE_DOMAIN}
+    volumes:
+      - ./okta-pysaml2-front:/usr/src/app

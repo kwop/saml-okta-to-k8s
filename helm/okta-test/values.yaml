@@ -1,0 +1,6 @@
+projectName: okta-test
+ingressDomain: xip.io
+containerPath: kwop/samltest:latest
+
+configmapData: |
+  url_saml_metadata: "https://dev-17904312.okta.com/app/exko8zwcgsve1RCej5d6/sso/saml/metadata"
